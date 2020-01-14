@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main(void)
+{
+	int i,j,sum=0,cp=0,t;
+	for(i=2;i<100;i++)
+	{
+		sum=0;cp=0;
+		for(j=1;j<i;j++)
+		{
+			if(!(i%j))
+			{
+				cp++;
+				sum+=j;
+			}
+		}
+			if(sum==i)
+			{
+				t=0;
+				printf("%d=",i);
+				for(j=1;j<i;j++)
+				{
+					if(!(i%j))
+					{
+					t++;
+					if(t==cp)
+					printf("%d",j);
+					else
+					printf("%d+",j);
+				}
+				}
+				printf("\n");
+			}
+	}
+}
