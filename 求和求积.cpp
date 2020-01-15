@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main(void)
+{
+	int s[100000][2],n,i,j,a,b,sum=0,t;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<2;j++)
+		scanf("%d",&s[i][j]);
+	}
+	for(j=0;j<n;j++)
+	{
+		sum=0;t=0;
+	for(i=1;i<s[j][0];i++)
+{
+		sum+=i;
+		if(sum==s[j][0])
+		break;
+	}
+	if(i==s[j][0])
+	printf("NONE\n");
+		else
+		{
+			for(a=1;a<i+1;a++)
+			{
+				for(b=a+2;b<i+1;b++)
+				{
+				if((s[j][0]+a*(a+1)+b*(b+1)-(2*a+2+2*b))==s[j][1])
+				{
+				t++; 
+				printf("(%d,%d)",a,b);
+			}
+			}
+			}
+			if(t==0)
+			printf("NONE\n");
+			else
+			printf("\n");
+		}
+		}
+	}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(void)
+{
+	int i,j,n,k,t=0,sum;
+	scanf("%d",&n);
+	for(i=10000;i<1000000;i++)
+	{
+		k=0;sum=0;
+		for(j=i;j>0;j/=10)
+		{
+		k=k*10+j%10;
+		sum+=j%10;
+	}
+		if(k==i&&sum==n)
+		t++;
+	}
+	if(t<=10)
+	{
+for(i=10000;i<1000000;i++)
+	{
+		k=0;sum=0;
+	for(j=i;j>0;j/=10)
+		{
+		k=k*10+j%10;
+		sum+=j%10;
+	}
+		if(k==i&&sum==n)
+		printf("%d\n",k);
+	}
+}
+	else
+	printf("%d\n",t);
+}
